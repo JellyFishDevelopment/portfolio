@@ -3,11 +3,14 @@ import Image from "next/image";
 import instagramLogo from "../../public/svg-tec/instagram_logo.svg";
 import linkedinLogo from "../../public/svg-tec/linkedin_logo.svg";
 import whatsappLogo from "../../public/svg-tec/whatsapplogo.svg";
-import { Locale } from "@/config/i18n.config";
-import { getDictionaryServerOnly } from "@/dictionaries/default-dictionary-server-only";
 
-export function Footer({ params }: { params: { lang: Locale } }) {
-  const dict = getDictionaryServerOnly(params.lang);
+export function Footer({
+  dict,
+  lang,
+}: {
+  dict: Record<string, unknown> & { site: { common: Record<string, string> } };
+  lang: string;
+}) {
 
   return (
     <div className="max-[425px]:p-0  max-[425px]:p-4 pl-56 pr-56 py-10 grid max-[768px]:grid-cols-1 max-[768px]:content-center">
@@ -60,16 +63,16 @@ export function Footer({ params }: { params: { lang: Locale } }) {
 
       <div className="max-[425px]:m-0 max-[425px]:mt-4 ml-12 flex flex-col gap-4 w-full">
         <div className="flex max-[425px]:text-sm max-[425px]:flex-col flex-row gap-10">
-          <a href={`/${params.lang}/`} className="hover:text-muted">
+          <a href={`/${lang}/`} className="hover:text-muted">
             {dict.site.common.home}
           </a>
-          <a href={`/${params.lang}/projects`} className="hover:text-muted">
+          <a href={`/${lang}/projects`} className="hover:text-muted">
             {dict.site.common.projects}
           </a>
-          <a href={`/${params.lang}/about`} className="hover:text-muted">
+          <a href={`/${lang}/about`} className="hover:text-muted">
             {dict.site.common.about}
           </a>
-          <a href={`/${params.lang}/contact`} className="hover:text-muted">
+          <a href={`/${lang}/contact`} className="hover:text-muted">
             {dict.site.common.contact}
           </a>
         </div>

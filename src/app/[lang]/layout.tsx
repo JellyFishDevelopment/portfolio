@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
-import { Footer } from "@/components/footer";
-import Nav from "@/components/nav";
+import { LayoutWrapper } from "@/components/layout-wrapper";
 import { i18n, Locale } from "@/config/i18n.config";
+import { getDictionaryServerOnly } from "@/dictionaries/default-dictionary-server-only";
 
 const siteId = Number(process.env.HORJAR_ID);
 const hotjarVersion = Number(process.env.HORJAR_V);
 const google_tag = process.env.GOOGLE_TAG;
 
 const inter = Inter({ subsets: ["latin"] });
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 
 export async function generateStaticParams() {
   const language = i18n.locales.map((lang) => ({ lang }));
@@ -23,13 +24,14 @@ export const metadata: Metadata = {
   description: "Nosso site de portfólio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { lang: string };
 }) {
+  const dict = getDictionaryServerOnly(params.lang as Locale);
   return (
     <html lang={params.lang}>
       <head>
@@ -65,13 +67,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
-        <Nav params={{ lang: params.lang as Locale }} />
-        {children}
+      <body className={`${inter.className} ${syne.variable}`}>
+        <LayoutWrapper lang={params.lang} dict={dict}>{children}</LayoutWrapper>
         <Analytics />
-        <div className="bg-black">
-          <Footer params={{ lang: params.lang as Locale }} />
-        </div>
       </body>
     </html>
   );

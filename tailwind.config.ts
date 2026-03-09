@@ -19,6 +19,12 @@ const config = {
     },
     extend: {
       colors: {
+        brand: {
+          primary: "#c1395c",
+          primaryDark: "#9e2b4a",
+          primaryLight: "#e05a7d",
+          dark: "#111111",
+        },
         jelly: '#2a1a1e',
         jelly_light: '#926171',
         jelly_border: '#412b32',
@@ -61,6 +67,9 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        display: ["var(--font-syne)", "sans-serif"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -70,10 +79,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 6s ease-in-out infinite",
       },
     },
   },

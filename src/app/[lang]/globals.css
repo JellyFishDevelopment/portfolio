@@ -184,14 +184,6 @@ hr {
   );
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-}
-
 @media only screen and (max-width: 425px) {
   body {
     width: 100%;

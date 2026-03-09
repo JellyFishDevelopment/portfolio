@@ -4,6 +4,7 @@ export const ptBR = {
             projects: 'Projetos',
             about: 'Quem Somos',
             contact: 'Contato',
+            agency: 'Agência',
             home: 'Inicio',
             github: 'GitHub',
             instagram: 'Instagram'
@@ -111,6 +112,17 @@ export const ptBR = {
             },
             contact: {
                 description: 'entre em contato agora para te ajudarmos a <strong>acontecer</strong> ❇️'
+            },
+            social: {
+                nav: { home: 'Início', services: 'Serviços', cases: 'Cases', about: 'Agência', testimonials: 'Depoimentos', cta: 'Falar com Consultor' },
+                hero: { badge: 'Disponível para novos projetos', title: 'Agência Digital de', titleHighlight: 'Alta Performance', subtitle: 'Transformamos marcas através de estratégias de social media, branding e performance. Resultados reais para empresas que buscam crescimento.', ctaPrimary: 'Solicitar Proposta', ctaSecondary: 'Ver Cases' },
+                partners: { title: 'Empresas que confiam na Jellyfish' },
+                services: { label: 'Nossos Serviços', title: 'Abordagem completa para resultados máximos', link: 'Ver todos os serviços' },
+                cases: { label: 'Cases de Sucesso', title: 'Resultados em', titleHighlight: 'números', cta: 'Ver todos os cases' },
+                about: { label: 'Metodologia', title: 'Não somos apenas uma agência, somos seu parceiro de crescimento', steps: ['Imersão & Diagnóstico', 'Planejamento Estratégico', 'Execução & Otimização'] },
+                testimonials: { label: 'Depoimentos', title: 'O que dizem nossos parceiros' },
+                contact: { title: 'Pronto para escalar sua marca?', subtitle: 'Vamos conversar sobre seus objetivos e desenhar uma estratégia personalizada para o seu negócio.', email: 'Email', whatsapp: 'WhatsApp', formSubmit: 'Enviar Solicitação' },
+                footer: { company: 'Empresa', services: 'Serviços', newsletter: 'Novidades', newsletterPlaceholder: 'Seu e-mail', copyright: 'Jellyfish Agency. Todos os direitos reservados.', madeWith: 'Feito com' }
             }
         },
         component: {

@@ -73,6 +73,11 @@ export default function NavBar({ dict, lang }: NavBarProps) {
               {dict.site.common.contact}
             </a>
           </li>
+          <li>
+            <a className="text-sm hover:text-muted" href={`/${lang}/social`}>
+              {dict.site.common.agency}
+            </a>
+          </li>
           <li className="flex flex-row place-content-center items-center gap-5 mt-2 lg:mt-0">
             <a href="https://github.com/JellyFishDevelopment" target="_blank">
               <GitHubLogoIcon />
@@ -110,6 +115,11 @@ export default function NavBar({ dict, lang }: NavBarProps) {
         <li>
           <a className="text-sm hover:text-muted" href={`/${lang}/contact`}>
             {dict.site.common.contact}
+          </a>
+        </li>
+        <li>
+          <a className="text-sm hover:text-muted" href={`/${lang}/social`}>
+            {dict.site.common.agency}
           </a>
         </li>
         <li className="flex flex-row place-content-center items-center max-[425px]:p-4 gap-5 mt-2 lg:mt-0">

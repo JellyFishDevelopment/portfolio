@@ -4,6 +4,7 @@ export const enUS = {
             projects: 'Projects',
             about: 'About Us',
             contact: 'Contact',
+            agency: 'Agency',
             home: 'Home',
             github: 'GitHub',
             instagram: 'Instagram'
@@ -103,6 +104,17 @@ export const enUS = {
             },
             contact: {
                 description: 'get in touch now for us to help you <strong>happen</strong> ❇️'
+            },
+            social: {
+                nav: { home: 'Home', services: 'Services', cases: 'Cases', about: 'Agency', testimonials: 'Testimonials', cta: 'Talk to Consultant' },
+                hero: { badge: 'Available for new projects', title: 'High-Performance', titleHighlight: 'Digital Agency', subtitle: 'We transform brands through social media strategy, branding, and performance. Real results for companies that want to grow.', ctaPrimary: 'Request Proposal', ctaSecondary: 'View Cases' },
+                partners: { title: 'Companies that trust Jellyfish' },
+                services: { label: 'Our Services', title: 'Full approach for maximum results', link: 'View all services' },
+                cases: { label: 'Success Cases', title: 'Results in', titleHighlight: 'numbers', cta: 'View all cases' },
+                about: { label: 'Methodology', title: "We're not just an agency, we're your growth partner", steps: ['Immersion & Diagnosis', 'Strategic Planning', 'Execution & Optimization'] },
+                testimonials: { label: 'Testimonials', title: 'What our partners say' },
+                contact: { title: 'Ready to scale your brand?', subtitle: "Let's talk about your goals and design a strategy tailored to your business.", email: 'Email', whatsapp: 'WhatsApp', formSubmit: 'Submit Request' },
+                footer: { company: 'Company', services: 'Services', newsletter: 'News', newsletterPlaceholder: 'Your email', copyright: 'Jellyfish Agency. All rights reserved.', madeWith: 'Made with' }
             }
         },
         component: {

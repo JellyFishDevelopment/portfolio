@@ -5,6 +5,8 @@ import { Locale } from "@/config/i18n.config";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionary-use-client";
 import { Button } from "./ui/button";
 import { Forward } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm({ params }: { params: { lang: Locale } }) {
   const [state, handleSubmit] = useForm("xdoqalzy");
@@ -20,11 +22,11 @@ export function ContactForm({ params }: { params: { lang: Locale } }) {
         {dict.site.component.contactForm.email}
       </label>
       <div className="pt-2 pb-5">
-        <input
+        <Input
           id="email"
           type="email"
           name="email"
-          className="email p-2 border border-jelly_light rounded-lg w-full bg-jelly"
+          className="email p-2"
           placeholder={dict.site.component.contactForm.emailPlaceholder}
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -33,11 +35,11 @@ export function ContactForm({ params }: { params: { lang: Locale } }) {
         {dict.site.component.contactForm.subject}
       </label>
       <div className="pt-2 pb-5">
-        <input
+        <Input
           id="subject"
           type="subject"
           name="subject"
-          className="subject p-2 border border-jelly_light bg-jelly rounded-lg w-full"
+          className="subject p-2"
           placeholder={dict.site.component.contactForm.subjectPlaceholder}
         />
         <ValidationError
@@ -50,10 +52,10 @@ export function ContactForm({ params }: { params: { lang: Locale } }) {
         {dict.site.component.contactForm.message}
       </label>
       <div className="pt-2">
-        <textarea
+        <Textarea
           id="message"
           name="message"
-          className="border border-jelly_light rounded-lg p-2 bg-jelly resize-none w-full"
+          className="p-2"
           cols={30}
           rows={7}
           placeholder={dict.site.component.contactForm.messagePlaceholder}
@@ -68,7 +70,7 @@ export function ContactForm({ params }: { params: { lang: Locale } }) {
       <a href={`/${params.lang}/projects`}></a>
       <div className="text-center w-full pt-4">
         <a type="submit" className="text-white w-full">
-          <Button className="max-[425px]:w-full w-72 text-lg font-regular">
+          <Button className="w-full font-regular">
             <Forward className="mr-2" strokeWidth={1} />
             {dict.site.component.contactForm.submitButton}
           </Button>

@@ -41,7 +41,7 @@ export const ptBR = {
                     about: {
                         title: 'Sobre nós',
                         body:
-                        `<p className="pb-4">
+                            `<p className="pb-4">
                             Na Jelly<span className="Fish font-bold">Fish</span> Development,
                             somos mais do que uma desenvolvedora de softwares; somos
                             arquitetos digitais dedicados a transformar suas ideias em
@@ -120,7 +120,7 @@ export const ptBR = {
                 services: { label: 'Nossos Serviços', title: 'Abordagem completa para resultados máximos', link: 'Ver todos os serviços' },
                 cases: { label: 'Cases de Sucesso', title: 'Resultados em', titleHighlight: 'números', cta: 'Ver todos os cases' },
                 about: { label: 'Metodologia', title: 'Não somos apenas uma agência, somos seu parceiro de crescimento', steps: ['Imersão & Diagnóstico', 'Planejamento Estratégico', 'Execução & Otimização'] },
-                testimonials: { label: 'Depoimentos', title: 'O que dizem nossos parceiros' },
+                testimonials: { label: 'Depoimentos', title: 'O que dizem nossos clientes' },
                 contact: { title: 'Pronto para escalar sua marca?', subtitle: 'Vamos conversar sobre seus objetivos e desenhar uma estratégia personalizada para o seu negócio.', email: 'Email', whatsapp: 'WhatsApp', formSubmit: 'Enviar Solicitação' },
                 footer: { company: 'Empresa', services: 'Serviços', newsletter: 'Novidades', newsletterPlaceholder: 'Seu e-mail', copyright: 'Jellyfish Agency. Todos os direitos reservados.', madeWith: 'Feito com' }
             }

@@ -17,12 +17,12 @@ export default function SocialPage({
     <div className="font-sans text-gray-900 bg-white overflow-x-hidden antialiased min-h-screen">
       <main>
         <SocialHero />
-        <SocialPartners />
+        {/* <SocialPartners /> */}
         <SocialServices />
         <SocialCases />
         <SocialAbout />
         <SocialTestimonials />
-        <SocialContact />
+        <SocialContact lang={params.lang} />
       </main>
       <SocialFooter lang={params.lang} />
     </div>

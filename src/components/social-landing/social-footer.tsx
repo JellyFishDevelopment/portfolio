@@ -1,5 +1,7 @@
 "use client";
 
+import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+
 import Link from "next/link";
 
 const FOOTER_LINKS = {
@@ -27,8 +29,8 @@ export function SocialFooter({ lang }: { lang: string }) {
               href={`/${lang}/social`}
               className="flex items-center gap-2 mb-6"
             >
-              <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center text-white">
-                <span className="text-lg" aria-hidden>◇</span>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-brand-primary">
+                <img src="/logo-jellyfish.png" alt="Jellyfish" width={32} height={32} />
               </div>
               <span className="font-display font-bold text-xl">Jellyfish</span>
             </Link>
@@ -44,73 +46,17 @@ export function SocialFooter({ lang }: { lang: string }) {
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors"
                 aria-label="Instagram"
               >
-                <span aria-hidden>IG</span>
+                <InstagramLogoIcon className="h-5 w-5" />
               </a>
-              <a
-                href="https://www.linkedin.com/company/jellyfish-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <span aria-hidden>in</span>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition-colors"
-                aria-label="Behance"
-              >
-                <span aria-hidden>Be</span>
-              </a>
+
             </div>
           </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-6">Empresa</h4>
-            <ul className="space-y-4 text-gray-400">
-              {FOOTER_LINKS.company.map(({ label, href }) => (
-                <li key={label}>
-                  <a href={href} className="hover:text-brand-primary transition-colors">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-6">Serviços</h4>
-            <ul className="space-y-4 text-gray-400">
-              {FOOTER_LINKS.services.map(({ label, href }) => (
-                <li key={label}>
-                  <a href={href} className="hover:text-brand-primary transition-colors">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-6">Novidades</h4>
-            <p className="text-gray-400 text-sm mb-4">
-              Receba insights de marketing semanalmente.
-            </p>
-            <form className="relative" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Seu e-mail"
-                className="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-primary transition-colors"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-2 w-8 h-8 bg-brand-primary rounded-md flex items-center justify-center hover:bg-brand-primaryLight transition-colors"
-                aria-label="Enviar"
-              >
-                →
-              </button>
-            </form>
-          </div>
+
+
+
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">

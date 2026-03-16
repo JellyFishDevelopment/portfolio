@@ -1,9 +1,10 @@
 "use client";
 
 import { Mail } from "lucide-react";
-import { SocialContactForm } from "./social-contact-form";
+import { ContactForm } from "@/components/contact-form";
+import type { Locale } from "@/config/i18n.config";
 
-export function SocialContact() {
+export function SocialContact({ lang }: { lang: Locale }) {
   return (
     <section id="contact" className="py-20 lg:py-32 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +30,7 @@ export function SocialContact() {
                   <p className="text-xs text-white/70 uppercase font-bold tracking-wider">
                     Email
                   </p>
-                  <p className="font-medium">contato@jellyfish.agencia</p>
+                  <p className="font-medium">contato@jellyfish.net.br</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -40,14 +41,14 @@ export function SocialContact() {
                   <p className="text-xs text-white/70 uppercase font-bold tracking-wider">
                     WhatsApp
                   </p>
-                  <p className="font-medium">(11) 99999-9999</p>
+                  <p className="font-medium">(13) 99106-3173</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="w-full lg:w-1/2 bg-white p-10 lg:p-16 z-10">
-            <SocialContactForm />
+            <ContactForm params={{ lang }} />
           </div>
         </div>
       </div>

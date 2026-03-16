@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import NavBar from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import type { Dictionary } from "@/dictionaries/default-dictionaries";
 
 export function LayoutWrapper({
   children,
@@ -11,7 +12,7 @@ export function LayoutWrapper({
 }: {
   children: React.ReactNode;
   lang: string;
-  dict: Record<string, unknown>;
+  dict: Dictionary;
 }) {
   const pathname = usePathname();
   const isSocialLanding = pathname?.includes("/social") ?? false;

@@ -3,12 +3,13 @@ import Image from "next/image";
 import instagramLogo from "../../public/svg-tec/instagram_logo.svg";
 import linkedinLogo from "../../public/svg-tec/linkedin_logo.svg";
 import whatsappLogo from "../../public/svg-tec/whatsapplogo.svg";
+import type { Dictionary } from "@/dictionaries/default-dictionaries";
 
 export function Footer({
   dict,
   lang,
 }: {
-  dict: Record<string, unknown> & { site: { common: Record<string, string> } };
+  dict: Dictionary;
   lang: string;
 }) {
 

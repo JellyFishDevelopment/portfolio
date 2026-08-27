@@ -8,7 +8,15 @@ export const i18n = {
     // Used when no locale matches
     defaultLocale, 
     locales, 
-    locateDetection: true
+    localeDetection: true
 }
 
 export type Locale = (typeof langs) [number]
+
+export function normalizeLocale(locale?: string | null): Locale {
+    const value = locale?.toLowerCase() ?? ''
+    if (value === 'pt-br' || value === 'pt' || value.startsWith('pt')) {
+        return 'pt-BR'
+    }
+    return 'en-US'
+}

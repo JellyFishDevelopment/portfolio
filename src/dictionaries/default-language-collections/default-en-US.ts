@@ -56,7 +56,103 @@ export const enUS = {
                         footer: `<b><span class="Fish select-none">Connect</span></b> with us now and embark on this journey`,
                         button: 'Contact us'
                     }
-                }
+                },
+                landing: {
+                    nav: {
+                        projects: 'Projects',
+                        agency: 'Agency',
+                        about: 'About Us',
+                        cta: 'Talk to us',
+                    },
+                    hero: {
+                        badge: 'Software studio · Brazil',
+                        titleBefore: 'We shape the ',
+                        titleHighlight: 'digital future',
+                        titleAfter: ' of those who build serious things.',
+                        description:
+                            'We are digital architects. Custom web, mobile, and desktop development — with an agile process, clean code, and an obsession for detail.',
+                        viewProjects: 'See projects',
+                        github: 'GitHub',
+                        stats: [
+                            { value: '20+', label: 'Projects delivered' },
+                            { value: '12', label: 'Technologies in stack' },
+                            { value: '5', label: 'Years on the road' },
+                            { value: '100%', label: 'Custom-built code' },
+                        ],
+                    },
+                    stack: [
+                        'React',
+                        'Next.js',
+                        'TypeScript',
+                        'JavaScript',
+                        'Express',
+                        'MySQL',
+                        'MongoDB',
+                        'PostgreSQL',
+                        'PHP',
+                        'Tailwind',
+                        'Python',
+                        'Docker',
+                    ],
+                    projects: {
+                        label: 'Work',
+                        title: 'Recent projects',
+                        subtitle:
+                            'Every delivery starts from a real business problem and ends as a product in production.',
+                        visit: 'Visit site',
+                        items: [
+                            {
+                                year: '2024',
+                                stack: 'Astro · Markdown · Docs',
+                                title: 'SDS Wiki',
+                                body: 'A dynamic, minimalist platform for searching and documenting Software Defined Storage, built with Astro on markdown files.',
+                                alt: 'Preview of the SDS Wiki project',
+                            },
+                            {
+                                year: '2024',
+                                stack: 'React · Email API · Institutional',
+                                title: 'JM Elétrica',
+                                body: 'Institutional website for electrical and energy solutions, with email sending integration and validated forms.',
+                                alt: 'Preview of the JM Elétrica project',
+                            },
+                            {
+                                year: '2023',
+                                stack: 'Static · SEO · Landing',
+                                title: 'Luciana Advocacia',
+                                body: 'Static website developed for legal advisory and consulting services, focused on performance and lead capture.',
+                                alt: 'Preview of the Luciana Advocacia project',
+                            },
+                        ],
+                    },
+                    about: {
+                        label: 'About us',
+                        title: 'More than a dev house: product partners.',
+                        body: 'At JellyFish Development, we work side by side with the client team. We define scope, prototype fast, ship in short cycles, and maintain what goes to production.',
+                        services: [
+                            {
+                                title: 'Web',
+                                body: 'High-performance apps and sites with React, Next.js, and TypeScript — from the design system to deploy.',
+                            },
+                            {
+                                title: 'Mobile',
+                                body: 'Cross-platform apps with a native feel, offline-first, and integration with custom APIs.',
+                            },
+                            {
+                                title: 'Desktop & Backend',
+                                body: 'APIs, automations, and internal systems in Node, Python, and PHP, containerized with Docker.',
+                            },
+                        ],
+                    },
+                    cta: {
+                        titleBefore: "Let's build ",
+                        titleHighlight: 'together',
+                        body: "If you have a vision, we have the tools to take it further. Tell us the problem and we'll design the path.",
+                        button: 'Start a conversation',
+                    },
+                    footer: {
+                        copyright: 'JellyFish Development',
+                    },
+                },
             },
             projects: {
                 category: 'Front-end/Web',
@@ -80,8 +176,14 @@ export const enUS = {
                 ]
             },
             about: {
-                title: 'Who<span class="Fish">We Are</span>',
-                subtitle: 'the team behind the excellence and innovation that <strong>happens</strong> 💡',
+                badge: 'About us',
+                titleBefore: 'The team behind the ',
+                titleHighlight: 'excellence',
+                titleAfter: ' that happens.',
+                subtitle:
+                    'Digital architects dedicated to turning ideas into product — with an agile process, clean code, and an obsession for detail.',
+                teamTitle: 'Who makes JellyFish',
+                body: 'We work side by side with the client team. We define scope, prototype fast, and maintain what goes to production.',
                 label: 'Founders',
                 cards: [
                     {

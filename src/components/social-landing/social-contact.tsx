@@ -41,7 +41,7 @@ export function SocialContact({ lang }: { lang: Locale }) {
                   <p className="text-xs text-white/70 uppercase font-bold tracking-wider">
                     WhatsApp
                   </p>
-                  <p className="font-medium">(13) 99106-3173</p>
+                  <p className="font-medium">(13) 98841-7817</p>
                 </div>
               </div>
             </div>

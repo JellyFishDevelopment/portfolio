@@ -271,3 +271,74 @@ hr {
   animation: float 5s infinite;
   transition: ease 0.5s;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.home-theme {
+  --background: 345 28% 5%;
+  --foreground: 0 0% 98%;
+  --card: 345 22% 9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 345 22% 9%;
+  --popover-foreground: 0 0% 98%;
+  --border: 345 16% 18%;
+  --input: 345 16% 18%;
+  --muted: 345 18% 12%;
+  --muted-foreground: 345 10% 68%;
+  --primary: 343 58% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 345 18% 14%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 345 18% 14%;
+  --accent-foreground: 0 0% 98%;
+  --ring: 343 58% 48%;
+  --gradient-aurora: linear-gradient(
+    120deg,
+    #ff9ec0 0%,
+    #e05a7d 28%,
+    #c1395c 52%,
+    #a855f7 78%,
+    #ff9ec0 100%
+  );
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+.home-theme section[id] {
+  scroll-margin-top: 6rem;
+}
+
+.home-theme .grid-backdrop {
+  background-image: linear-gradient(
+      to right,
+      hsl(var(--border) / 0.45) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, hsl(var(--border) / 0.45) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 18%, transparent 72%);
+}
+
+.home-theme .text-aurora {
+  display: inline-block;
+  background-image: var(--gradient-aurora);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.home-theme .glow-ring {
+  box-shadow: 0 0 28px hsl(var(--primary) / 0.45);
+}
+
+.home-theme .surface-card {
+  border-radius: 1.25rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(16px);
+}

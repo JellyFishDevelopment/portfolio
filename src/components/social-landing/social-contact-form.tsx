@@ -27,62 +27,54 @@ export function SocialContactForm() {
 
   if (state.succeeded) {
     return (
-      <p className="text-center text-gray-600 py-8">
+      <p className="py-8 text-center text-muted-foreground">
         Obrigado! Sua solicitação foi enviada. Entraremos em contato em breve.
       </p>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="social-name" className="text-gray-700">
-            Nome
-          </Label>
+          <Label htmlFor="social-name">Nome</Label>
           <Input
             id="social-name"
             type="text"
             name="name"
             placeholder="Seu nome"
-            className="rounded-xl bg-gray-50 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
+            className="rounded-full"
             required
           />
           <ValidationError prefix="name" field="name" errors={state.errors} />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="social-company" className="text-gray-700">
-            Empresa
-          </Label>
+          <Label htmlFor="social-company">Empresa</Label>
           <Input
             id="social-company"
             type="text"
             name="company"
             placeholder="Nome da empresa"
-            className="rounded-xl bg-gray-50 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
+            className="rounded-full"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="social-email" className="text-gray-700">
-          Email Corporativo
-        </Label>
+        <Label htmlFor="social-email">Email Corporativo</Label>
         <Input
           id="social-email"
           type="email"
           name="email"
           placeholder="voce@empresa.com"
-          className="rounded-xl bg-gray-50 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
+          className="rounded-full"
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="social-interest" className="text-gray-700">
-          Tenho interesse em:
-        </Label>
+        <Label htmlFor="social-interest">Tenho interesse em:</Label>
         <Select
           name="interest"
           value={interest}
@@ -91,7 +83,7 @@ export function SocialContactForm() {
         >
           <SelectTrigger
             id="social-interest"
-            className="w-full rounded-xl bg-gray-50 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
+            className="w-full rounded-full"
           >
             <SelectValue placeholder="Selecione uma opção" />
           </SelectTrigger>
@@ -107,17 +99,15 @@ export function SocialContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="social-message" className="text-gray-700">
-          Mensagem (Opcional)
-        </Label>
+        <Label htmlFor="social-message">Mensagem (Opcional)</Label>
         <textarea
           id="social-message"
           name="message"
           rows={3}
           placeholder="Conte um pouco sobre seu desafio..."
           className={cn(
-            "flex w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm",
-            "focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all",
+            "flex min-h-[80px] w-full rounded-2xl border border-input bg-transparent px-4 py-3 text-sm shadow-sm",
+            "placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
             "resize-none"
           )}
         />
@@ -127,7 +117,7 @@ export function SocialContactForm() {
       <Button
         type="submit"
         disabled={state.submitting}
-        className="w-full py-4 px-6 rounded-xl bg-brand-dark text-white font-bold hover:bg-black shadow-lg hover:shadow-xl transition-all"
+        className="glow-ring h-auto w-full rounded-full px-6 py-3"
       >
         Enviar Solicitação
       </Button>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 import { LayoutWrapper } from "@/components/layout-wrapper";
-import { i18n, Locale } from "@/config/i18n.config";
+import { i18n, normalizeLocale } from "@/config/i18n.config";
 import { getDictionaryServerOnly } from "@/dictionaries/default-dictionary-server-only";
 
 const siteId = Number(process.env.HORJAR_ID);
@@ -12,7 +12,11 @@ const hotjarVersion = Number(process.env.HORJAR_V);
 const google_tag = process.env.GOOGLE_TAG;
 
 const inter = Inter({ subsets: ["latin"] });
-const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export async function generateStaticParams() {
   const language = i18n.locales.map((lang) => ({ lang }));
@@ -31,9 +35,10 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  const dict = getDictionaryServerOnly(params.lang as Locale);
+  const locale = normalizeLocale(params.lang);
+  const dict = getDictionaryServerOnly(locale);
   return (
-    <html lang={params.lang}>
+    <html lang={locale}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -67,8 +72,8 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${syne.variable}`}>
-        <LayoutWrapper lang={params.lang} dict={dict}>{children}</LayoutWrapper>
+      <body className={`${inter.className} ${spaceGrotesk.variable}`}>
+        <LayoutWrapper lang={locale} dict={dict}>{children}</LayoutWrapper>
         <Analytics />
       </body>
     </html>

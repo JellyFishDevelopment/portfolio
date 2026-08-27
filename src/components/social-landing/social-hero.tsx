@@ -3,7 +3,7 @@
 import { Play, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_IMAGE = "/jellyfish-3d.png";
+const HERO_IMAGE = "/jelly-hero.jpg";
 
 export function SocialHero() {
   return (

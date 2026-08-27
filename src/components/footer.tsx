@@ -50,7 +50,7 @@ export function Footer({
             />
           </a>
 
-          <a href="https://wa.me/5513991063173" target="_blank">
+          <a href="https://wa.me/5513988417817" target="_blank">
             <Image
               className="hover:scale-105 max-[425px]:w-[20px] ease-in-out duration-300"
               src={whatsappLogo}

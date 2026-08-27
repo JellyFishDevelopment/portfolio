@@ -78,7 +78,7 @@ export const ptBR = {
                         titleHighlight: 'futuro digital',
                         titleAfter: ' de quem constrói coisas sérias.',
                         description:
-                            'Somos arquitetos digitais. Desenvolvimento web, mobile e desktop sob medida — com processo ágil, código limpo e obsessão por detalhe.',
+                            'Somos arquitetos digitais. Desenvolvimento web, mobile e desktop sob medida, com processo ágil, código limpo e obsessão por detalhe.',
                         viewProjects: 'Ver projetos',
                         github: 'GitHub',
                         stats: [

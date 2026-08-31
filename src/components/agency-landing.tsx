@@ -158,7 +158,7 @@ export function AgencyLanding({
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 {copy.hero.badge}
               </span>
-              <h1 className="mt-6 text-5xl leading-[0.95] font-bold md:text-7xl">
+              <h1 className="mt-6 text-5xl leading-[1.12] font-bold md:text-7xl">
                 {copy.hero.title}{" "}
                 <span className="text-aurora">{copy.hero.titleHighlight}</span>
               </h1>

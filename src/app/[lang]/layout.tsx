@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Lexend } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -12,9 +12,9 @@ const hotjarVersion = Number(process.env.HORJAR_V);
 const google_tag = process.env.GOOGLE_TAG;
 
 const inter = Inter({ subsets: ["latin"] });
-const spaceGrotesk = Space_Grotesk({
+const lexend = Lexend({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-lexend",
   display: "swap",
 });
 
@@ -72,7 +72,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${spaceGrotesk.variable}`}>
+      <body className={`${inter.className} ${lexend.variable}`}>
         <LayoutWrapper lang={locale} dict={dict}>{children}</LayoutWrapper>
         <Analytics />
       </body>

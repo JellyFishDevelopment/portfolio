@@ -1,17 +1,21 @@
 import Image from "next/image";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Globe, Server, Smartphone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TECH_STACK } from "@/components/logos-tech";
 import { Marquee, MarqueeFade } from "@/components/ui/marquee";
 import { SiteFooter, SiteHeader, SITE_LINKS, HeroJellyfish } from "@/components/site-chrome";
 import type { Dictionary } from "@/dictionaries/default-dictionaries";
 import { cn } from "@/lib/utils";
 
-const PROJECT_MEDIA = [
+const PROJECT_MEDIA: {
+  href?: string;
+  image: string;
+  reversed: boolean;
+}[] = [
   {
-    href: "https://sds-wiki.vercel.app/",
-    image: "/sds-wiki.png",
+    image: "/imoveis.png",
     reversed: false,
   },
   {
@@ -24,7 +28,9 @@ const PROJECT_MEDIA = [
     image: "/luciana-advogada.png",
     reversed: false,
   },
-] as const;
+];
+
+const SERVICE_ICONS = [Globe, Smartphone, Server];
 
 export function HomeLanding({
   dict,
@@ -60,7 +66,7 @@ export function HomeLanding({
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 {copy.hero.badge}
               </span>
-              <h1 className="mt-6 text-5xl leading-[0.95] font-bold md:text-7xl">
+              <h1 className="mt-6 text-5xl leading-[1.12] font-bold md:text-7xl">
                 {copy.hero.titleBefore}
                 <span className="text-aurora">{copy.hero.titleHighlight}</span>
                 {copy.hero.titleAfter}
@@ -102,28 +108,37 @@ export function HomeLanding({
           </div>
         </section>
 
-        <section id="stack" className="border-y border-border py-6">
-          <Marquee
-            pauseOnHover
-            className="[--duration:32s] [--gap:3rem]"
-          >
-            {copy.stack.map((tech) => (
-              <span
-                key={tech}
-                className="font-display text-lg whitespace-nowrap text-muted-foreground"
-              >
-                {tech}
-              </span>
+        <section
+          id="stack"
+          aria-label={copy.hero.stats[1]?.label}
+          className="border-y border-border py-6"
+        >
+          <Marquee pauseOnHover className="[--duration:32s] [--gap:3rem]">
+            {TECH_STACK.map((tech) => (
+              <Image
+                key={tech.name}
+                src={tech.src}
+                alt={tech.name}
+                title={tech.name}
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 object-contain opacity-80 transition duration-500 hover:-translate-y-1 hover:opacity-100"
+              />
             ))}
             <MarqueeFade fade="horizontal" />
           </Marquee>
         </section>
 
-        <section id="projetos" className="px-6 py-24 md:py-32">
-          <div className="mx-auto max-w-6xl">
+        <section id="projetos" className="relative px-6 py-24 md:py-32">
+          <div
+            className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[80%] max-w-4xl -translate-x-1/2 rounded-full opacity-[0.12] blur-[130px]"
+            style={{ background: "var(--gradient-aurora)" }}
+          />
+          <div className="relative mx-auto max-w-6xl">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-xs tracking-widest text-primary uppercase">
+                <p className="inline-flex items-center gap-2 text-xs tracking-widest text-primary uppercase">
+                  <span className="h-px w-8 bg-primary/60" />
                   {copy.projects.label}
                 </p>
                 <h2 className="mt-3 text-4xl font-bold md:text-5xl">
@@ -134,83 +149,135 @@ export function HomeLanding({
                 {copy.projects.subtitle}
               </p>
             </div>
-            <div className="mt-14 space-y-8">
+            <div className="mt-16 space-y-16 md:space-y-24">
               {copy.projects.items.map((project, index) => {
                 const media = PROJECT_MEDIA[index];
+                const stackItems = project.stack.split("·").map((item) => item.trim());
+                const isLink = Boolean(media.href);
+                const Wrapper = isLink ? "a" : "div";
                 return (
-                  <a
+                  <Wrapper
                     key={project.title}
-                    href={media.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group block"
+                    {...(isLink
+                      ? { href: media.href, target: "_blank", rel: "noreferrer" }
+                      : {})}
+                    className="group relative grid items-center gap-8 md:grid-cols-2 md:gap-14"
                   >
-                    <Card className="surface-card overflow-hidden border-0 bg-transparent shadow-none transition-transform hover:-translate-y-1">
-                      <CardContent className="grid gap-8 p-6 md:grid-cols-2 md:p-8">
-                        <div className={cn(media.reversed && "md:order-2")}>
-                          <Image
-                            src={media.image}
-                            alt={project.alt}
-                            width={1280}
-                            height={800}
-                            className="w-full rounded-xl border border-border object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "pointer-events-none absolute -top-10 z-0 select-none font-display text-[7rem] font-bold leading-none text-foreground/[0.04] md:text-[10rem]",
+                        media.reversed ? "right-0 md:-right-4" : "left-0 md:-left-4"
+                      )}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className={cn("relative z-10", media.reversed && "md:order-2")}>
+                      <div className="surface-card relative overflow-hidden rounded-2xl p-1.5 transition-transform duration-500 group-hover:-translate-y-1">
+                        <Image
+                          src={media.image}
+                          alt={project.alt}
+                          width={1280}
+                          height={800}
+                          className="w-full rounded-xl object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        />
+                        {isLink && (
+                          <>
+                            <div className="pointer-events-none absolute inset-1.5 rounded-xl bg-gradient-to-t from-background/80 via-background/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                            <span className="absolute bottom-4 left-1/2 inline-flex -translate-x-1/2 translate-y-3 items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs font-medium text-foreground opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                              {copy.projects.visit}
+                              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                    <div className={cn("relative z-10 flex flex-col justify-center", media.reversed && "md:order-1")}>
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="rounded-full border border-border bg-card/40 px-2.5 py-0.5">
+                          {project.year}
+                        </span>
+                        <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
+                      </div>
+                      <h3 className="mt-5 text-3xl font-bold transition-colors duration-300 group-hover:text-aurora md:text-4xl">
+                        {project.title}
+                      </h3>
+                      <p className="mt-4 max-w-md text-muted-foreground">{project.body}</p>
+                      <ul className="mt-6 flex flex-wrap gap-2">
+                        {stackItems.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full border border-border bg-card/40 px-3 py-1 text-xs text-muted-foreground transition-colors duration-300 group-hover:border-primary/40 group-hover:text-foreground"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      {isLink && (
+                        <span className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                          {copy.projects.visit}
+                          <ArrowUpRight
+                            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            aria-hidden
                           />
-                        </div>
-                        <div className="flex flex-col justify-center">
-                          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                            <span>{project.year}</span>
-                            <span className="h-px w-8 bg-border" />
-                            <span>{project.stack}</span>
-                          </div>
-                          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
-                            {project.title}
-                          </h3>
-                          <p className="mt-4 text-muted-foreground">{project.body}</p>
-                          <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary">
-                            {copy.projects.visit}
-                            <ArrowUpRight
-                              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                              aria-hidden
-                            />
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
+                        </span>
+                      )}
+                    </div>
+                  </Wrapper>
                 );
               })}
             </div>
           </div>
         </section>
 
-        <section id="sobre" className="px-6 pb-24 md:pb-32">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
+        <section id="sobre" className="relative px-6 pb-24 md:pb-32">
+          <div
+            className="pointer-events-none absolute left-0 top-10 h-[360px] w-[60%] max-w-2xl rounded-full opacity-[0.1] blur-[130px]"
+            style={{ background: "var(--gradient-aurora)" }}
+          />
+          <div className="relative mx-auto max-w-6xl">
+            <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
               <div>
-                <p className="text-xs tracking-widest text-primary uppercase">
+                <p className="inline-flex items-center gap-2 text-xs tracking-widest text-primary uppercase">
+                  <span className="h-px w-8 bg-primary/60" />
                   {copy.about.label}
                 </p>
-                <h2 className="mt-3 text-4xl font-bold md:text-5xl">
+                <h2 className="mt-4 text-4xl font-bold leading-[1.1] md:text-5xl">
                   {copy.about.title}
                 </h2>
-                <p className="mt-6 text-muted-foreground">{copy.about.body}</p>
+                <p className="mt-6 max-w-md text-muted-foreground">{copy.about.body}</p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {copy.about.services.map((service) => (
-                  <Card
-                    key={service.title}
-                    className="surface-card border-0 bg-transparent shadow-none"
-                  >
-                    <CardHeader className="p-6">
-                      <CardTitle className="font-display text-lg font-semibold">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="px-6 pb-6 pt-0">
-                      <p className="text-sm text-muted-foreground">{service.body}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="grid gap-4">
+                {copy.about.services.map((service, index) => {
+                  const Icon = SERVICE_ICONS[index] ?? Globe;
+                  return (
+                    <Card
+                      key={service.title}
+                      className="surface-card group relative overflow-hidden border-0 bg-transparent shadow-none transition-transform duration-500 hover:-translate-y-1"
+                    >
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      />
+                      <CardContent className="flex items-start gap-5 p-6">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-card/60 text-primary transition-colors duration-500 group-hover:border-primary/40">
+                          <Icon className="h-5 w-5" aria-hidden />
+                        </div>
+                        <div>
+                          <h3 className="font-display text-lg font-semibold">
+                            {service.title}
+                          </h3>
+                          <p className="mt-2 text-sm text-muted-foreground">
+                            {service.body}
+                          </p>
+                        </div>
+                        <span className="ml-auto text-xs font-medium tabular-nums text-muted-foreground/50">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </div>

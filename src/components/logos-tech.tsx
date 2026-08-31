@@ -1,3 +1,6 @@
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
+
 import reactlogo from "../../public/svg-tec/reactlogo.svg";
 import nextjslogo from "../../public/svg-tec/nextjslogo.svg";
 import tslogo from "../../public/svg-tec/tslogo.svg";
@@ -10,132 +13,35 @@ import postgrelogo from "../../public/svg-tec/postgrelogo.svg";
 import mysqllogo from "../../public/svg-tec/mysqllogo.svg";
 import pythonlogo from "../../public/svg-tec/pythonlogo.svg";
 import dockerlogo from "../../public/svg-tec/dockerlogo.svg";
-import Image from "next/image";
+
+export const TECH_STACK: { name: string; src: StaticImageData }[] = [
+  { name: "React", src: reactlogo },
+  { name: "Next.js", src: nextjslogo },
+  { name: "TypeScript", src: tslogo },
+  { name: "JavaScript", src: jslogo },
+  { name: "Express", src: exlogo },
+  { name: "MySQL", src: mysqllogo },
+  { name: "MongoDB", src: mongodblogo },
+  { name: "PostgreSQL", src: postgrelogo },
+  { name: "PHP", src: phplogo },
+  { name: "Tailwind", src: twlogo },
+  { name: "Python", src: pythonlogo },
+  { name: "Docker", src: dockerlogo },
+];
 
 export default function LogosTech() {
   return (
-    <>
-      <div className="mt-11 gap-4 grid grid-flow-col">
-        <div>
-          <Image
-            className="ml-2 object-cover transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={reactlogo}
-            width={100}
-            height={100}
-            alt="react logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={nextjslogo}
-            width={100}
-            height={100}
-            alt="next logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={tslogo}
-            width={100}
-            height={100}
-            alt="typescript logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={jslogo}
-            width={100}
-            height={100}
-            alt="javascript logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={exlogo}
-            width={100}
-            height={100}
-            alt="express logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={mysqllogo}
-            width={100}
-            height={100}
-            alt="mysql logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={mongodblogo}
-            width={100}
-            height={100}
-            alt="mongodb logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={postgrelogo}
-            width={100}
-            height={100}
-            alt="postgre logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={phplogo}
-            width={100}
-            height={100}
-            alt="php logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={twlogo}
-            width={100}
-            height={100}
-            alt="tailwind logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={pythonlogo}
-            width={100}
-            height={100}
-            alt="python logo"
-          />
-        </div>
-
-        <div>
-          <Image
-            className="transition ease-in-out duration-500 react-logo hover:-translate-y-2"
-            src={dockerlogo}
-            width={100}
-            height={100}
-            alt="docker logo"
-          />
-        </div>
-      </div>
-    </>
+    <div className="mt-11 grid grid-flow-col gap-4">
+      {TECH_STACK.map((tech) => (
+        <Image
+          key={tech.name}
+          className="object-contain transition duration-500 ease-in-out hover:-translate-y-2"
+          src={tech.src}
+          width={100}
+          height={100}
+          alt={`${tech.name} logo`}
+        />
+      ))}
+    </div>
   );
 }

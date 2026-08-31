@@ -110,11 +110,11 @@ export const ptBR = {
                         visit: 'Visitar site',
                         items: [
                             {
-                                year: '2024',
-                                stack: 'Astro · Markdown · Docs',
-                                title: 'SDS Wiki',
-                                body: 'Plataforma dinâmica e minimalista para busca e documentação de Software Defined Storage, construída em Astro sobre arquivos markdown.',
-                                alt: 'Prévia do projeto SDS Wiki',
+                                year: '2025',
+                                stack: 'Next.js · Django · MySQL',
+                                title: 'Sistema Imobiliário',
+                                body: 'Sistema de gerenciamento de imóveis para corretores e imobiliárias, com filtros, cadastro de propriedades e geração de relatórios.',
+                                alt: 'Prévia do sistema de gerenciamento de imóveis',
                             },
                             {
                                 year: '2024',

@@ -102,11 +102,11 @@ export const enUS = {
                         visit: 'Visit site',
                         items: [
                             {
-                                year: '2024',
-                                stack: 'Astro · Markdown · Docs',
-                                title: 'SDS Wiki',
-                                body: 'A dynamic, minimalist platform for searching and documenting Software Defined Storage, built with Astro on markdown files.',
-                                alt: 'Preview of the SDS Wiki project',
+                                year: '2025',
+                                stack: 'Next.js · Django · MySQL',
+                                title: 'Real Estate System',
+                                body: 'Property management system for real-estate agents and agencies, with filters, property records, and report generation.',
+                                alt: 'Preview of the real estate management system',
                             },
                             {
                                 year: '2024',

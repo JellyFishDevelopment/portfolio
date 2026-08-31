@@ -11,6 +11,7 @@ jobs:
   preview:
     if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment: vercel
     steps:
       - uses: actions/checkout@v4
       - name: Install Vercel CLI
@@ -25,6 +26,7 @@ jobs:
   production:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment: vercel
     steps:
       - uses: actions/checkout@v4
       - name: Install Vercel CLI

@@ -112,9 +112,9 @@ export const ptBR = {
                             {
                                 year: '2025',
                                 stack: 'Next.js · Django · MySQL',
-                                title: 'Sistema Imobiliário',
-                                body: 'Sistema de gerenciamento de imóveis para corretores e imobiliárias, com filtros, cadastro de propriedades e geração de relatórios.',
-                                alt: 'Prévia do sistema de gerenciamento de imóveis',
+                                title: 'Sistema Abelha',
+                                body: 'Sistema de busca e gestão de imóveis para corretores — mais de 400 tabelas de Praia Grande e região, com filtros avançados e envio ágil aos clientes.',
+                                alt: 'Prévia do Sistema Abelha',
                             },
                             {
                                 year: '2024',
@@ -178,8 +178,8 @@ export const ptBR = {
                         description: 'Site estático dedicado à Consultoria Jurídica, projetado para fornecer informações sobre os serviços jurídicos oferecidos.'
                     },
                     {
-                        title: 'Sistema Imobiliário',
-                        description: 'Sistema dinâmico para gerenciar imóveiss, imobiliárias com seus devidos corretores com filtros e geração de rellatório'
+                        title: 'Sistema Abelha',
+                        description: 'Sistema de busca e gestão de imóveis para corretores — mais de 400 tabelas de Praia Grande e região, com filtros avançados e envio ágil aos clientes.'
                     },
                 ]
             },

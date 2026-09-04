@@ -104,9 +104,9 @@ export const enUS = {
                             {
                                 year: '2025',
                                 stack: 'Next.js · Django · MySQL',
-                                title: 'Real Estate System',
-                                body: 'Property management system for real-estate agents and agencies, with filters, property records, and report generation.',
-                                alt: 'Preview of the real estate management system',
+                                title: 'Sistema Abelha',
+                                body: 'Property search and management system for real-estate agents — 400+ tables from Praia Grande and region, with advanced filters and fast client sharing.',
+                                alt: 'Preview of Sistema Abelha',
                             },
                             {
                                 year: '2024',
@@ -170,8 +170,8 @@ export const enUS = {
                         description: 'Static website dedicated to Legal Consulting, designed to provide information about the legal services offered.'
                     },
                     {
-                        title: 'Real Estate System',
-                        description: 'Dynamic solution for managing properties, real estate agencies, and their respective agents. It includes advanced filters and report generation features to streamline operations.'
+                        title: 'Sistema Abelha',
+                        description: 'Property search and management system for real-estate agents — 400+ tables from Praia Grande and region, with advanced filters and fast client sharing.'
                     },
                 ]
             },

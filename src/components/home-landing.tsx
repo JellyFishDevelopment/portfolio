@@ -15,7 +15,8 @@ const PROJECT_MEDIA: {
   reversed: boolean;
 }[] = [
   {
-    image: "/imoveis.png",
+    href: "https://www.sistema-abelha.com.br/",
+    image: "/sistema-abelha.png",
     reversed: false,
   },
   {

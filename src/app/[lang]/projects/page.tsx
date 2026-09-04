@@ -3,7 +3,7 @@ import { Texture } from "@/components/texture";
 import sdsWikiProject from "../../../../public/sds-wiki.png";
 import jmSiteProject from "../../../../public/jm-eletrica.png";
 import lucianaProject from "@/../public/luciana-advogada.png";
-import imoveisProject from "@/../public/imoveis.png"
+import imoveisProject from "@/../public/sistema-abelha.png"
 import astrologo from "../../../../public/svg-tec/astrologo.svg";
 import nextjslogo from "../../../../public/svg-tec/nextjslogo.svg";
 import djangologo from "@/../public/svg-tec/djangologo.svg";
